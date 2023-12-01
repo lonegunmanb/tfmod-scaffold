@@ -19,7 +19,7 @@ tffmt:
 	terraform fmt -recursive
 
 tffmtcheck:
-	curl -sSL "$REMOTE_SCRIPT/terraform-fmt.sh" | sh -s
+	curl -sSL "$(REMOTE_SCRIPT)/terraform-fmt.sh" | sh -s
 
 tfvalidatecheck:
 	@sh "$(CURDIR)/scripts/terraform-validate.sh"
