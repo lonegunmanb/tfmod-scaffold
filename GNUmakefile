@@ -1,5 +1,7 @@
+$REMOTE_SCRIPT="https://raw.githubusercontent.com/lonegunmanb/tfmod-scaffold/main/scripts"
+
 fmt:
-	echo "==> Fixing source code with gofmt..."
+	@echo "==> Fixing source code with gofmt..."
 	# This logic should match the search logic in scripts/gofmtcheck.sh
 	find . -name '*.go' | grep -v vendor | xargs gofmt -s -w
 
@@ -17,7 +19,7 @@ tffmt:
 	terraform fmt -recursive
 
 tffmtcheck:
-	@sh "$(CURDIR)/scripts/terraform-fmt.sh"
+	curl -sSL "$REMOTE_SCRIPT/terraform-fmt.sh" | sh -s
 
 tfvalidatecheck:
 	@sh "$(CURDIR)/scripts/terraform-validate.sh"
