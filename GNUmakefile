@@ -1,4 +1,4 @@
-$REMOTE_SCRIPT="https://raw.githubusercontent.com/lonegunmanb/tfmod-scaffold/main/scripts"
+REMOTE_SCRIPT := "https://raw.githubusercontent.com/lonegunmanb/tfmod-scaffold/main/scripts"
 
 fmt:
 	@echo "==> Fixing source code with gofmt..."
